@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SSS.API.Models.Domain;
 using SSS.API.Models.DTO;
@@ -23,6 +24,7 @@ namespace SSS.API.Controllers
 
         // GET: {apibaseurl}/api/JobPostings
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllJobPostings()
         {
             var jobPostings = await jobPostingRepository.GetAllAsync();
