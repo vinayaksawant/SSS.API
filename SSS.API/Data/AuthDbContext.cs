@@ -45,15 +45,18 @@ namespace SSS.API.Data
             var admin = new IdentityUser()
             {
                 Id = adminUserId,
-                UserName = "admin@codepulse.com",
-                Email = "admin@codepulse.com",
-                NormalizedEmail = "admin@codepulse.com".ToUpper(),
-                NormalizedUserName = "admin@codepulse.com".ToUpper()
+                UserName = "admin@SSS.com",
+                Email = "admin@SSS.com",
+                NormalizedEmail = "admin@SSS.com".ToUpper(),
+                NormalizedUserName = "admin@SSS.com".ToUpper()
             };
 
             admin.PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(admin, "Admin@123");
 
             builder.Entity<IdentityUser>().HasData(admin);
+
+            //readonly role added
+            //abcd@abcd.com --abcd@1234
 
             // Give Roles To Admin
 

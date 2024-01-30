@@ -9,5 +9,9 @@ namespace SSS.API.Repositories.Interface
         Task<IEnumerable<JobCategory>> GetAllAsync();
 
         Task<JobCategory?> GetById(Guid id);
+
+        Task<JobCategory?> UpdateAsync(JobCategory jobCategory);
+
+        Task<JobCategory?> DeleteAsync(Guid id);
     }
 }

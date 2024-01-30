@@ -32,5 +32,33 @@ namespace SSS.API.Repositories.Implementaion
             return await dbContext.JobCategories.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+
+        public async Task<JobCategory?> DeleteAsync(Guid id)
+        {
+            var existingCategory = await dbContext.JobCategories.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (existingCategory is null)
+            {
+                return null;
+            }
+
+            dbContext.JobCategories.Remove(existingCategory);
+            await dbContext.SaveChangesAsync();
+            return existingCategory;
+        }
+
+        public async Task<JobCategory?> UpdateAsync(JobCategory jobcategory)
+        {
+            var existingCategory = await dbContext.JobCategories.FirstOrDefaultAsync(x => x.Id == jobcategory.Id);
+
+            if (existingCategory != null)
+            {
+                dbContext.Entry(existingCategory).CurrentValues.SetValues(jobcategory);
+                await dbContext.SaveChangesAsync();
+                return jobcategory;
+            }
+
+            return null;
+        }
     }
 }
