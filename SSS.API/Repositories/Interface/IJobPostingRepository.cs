@@ -9,5 +9,11 @@ namespace SSS.API.Repositories.Interface
         Task<IEnumerable<JobPosting>> GetAllAsync();
 
         Task<JobPosting?> GetByIdAsync(Guid id);
+
+        Task<JobPosting?> GetByUrlHandleAsync(string urlHandle);
+
+        Task<JobPosting?> UpdateAsync(JobPosting blogPost);
+
+        Task<JobPosting?> DeleteAsync(Guid id);
     }
 }
