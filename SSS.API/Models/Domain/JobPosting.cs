@@ -1,4 +1,6 @@
-﻿namespace SSS.API.Models.Domain
+﻿using SSS.API.Models.DTO;
+
+namespace SSS.API.Models.Domain
 {
     public class JobPosting
     {
@@ -16,5 +18,13 @@
         public bool IsVisible { get; set; }
 
         public ICollection<JobCategory> JobCategories { get; set; }
+
+        public ICollection<JobSkill> RequiredJobSkills { get; set; }
+
+        public ICollection<JobSkill> GoodToHaveJobSkills { get; set; }
+
+        public ICollection<Document> Documents { get; set; }
+
+        public ICollection<LinkHandle> LinkHandles { get; set; }
     }
 }
