@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SSS.API.Data;
 
@@ -11,9 +12,11 @@ using SSS.API.Data;
 namespace SSS.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240224225334_AddedNullableProperties")]
+    partial class AddedNullableProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,6 +66,7 @@ namespace SSS.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AddressLine2")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AddressType")
@@ -78,6 +82,7 @@ namespace SSS.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("County")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("MemberId")
@@ -88,6 +93,7 @@ namespace SSS.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Region")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("State")
@@ -95,6 +101,7 @@ namespace SSS.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Takula")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
@@ -518,9 +525,11 @@ namespace SSS.API.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("PhoneAreaCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneLocalStdIsd")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")

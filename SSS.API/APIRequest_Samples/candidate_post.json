@@ -1,0 +1,84 @@
+{
+  "memberCandidate": {
+    "orgName": "string",
+    "description": "string",
+    "individual": true,
+    "firstName": "string",
+    "lastName": "string",
+    "middleName": "string",
+    "title": "string",
+    "addresses": [
+      {
+        "addressLine1": "string",
+        "addressLine2": "string",
+        "city": "string",
+        "takula": "string",
+        "region": "string",
+        "county": "string",
+        "state": "string",
+        "postalCode": "string",
+        "country": "string",
+        "addressType": "string"
+      }
+    ],
+    "emails": [
+      {
+        "emailAddress": "string",
+        "emailType": "string"
+      }
+    ],
+    "phones": [
+      {
+        "phoneAreaCode": "string",
+        "phoneLocalStdIsd": "string",
+        "phoneNumber": "string",
+        "phoneType": "string"
+      }
+    ]
+  },
+  "profileImages": {
+    "imageFileName": "string",
+    "imageFileExtension": "string",
+    "imageFileTitle": "string",
+    "imageFileUrl": "string",
+    "imageFileType": "string",
+    "dateCreated": "2024-02-24T22:28:57.863Z"
+  },
+  "yearsOfExperience": "string",
+  "isVisible": true,
+  "experienceJobSkills": [
+    {
+      "name": "string",
+      "description": "string"
+    }
+  ],
+  "documents": [
+    {
+      "documentName": "string",
+      "documentExtension": "string",
+      "documentTitle": "string",
+      "documentUrl": "string",
+      "documentType": "string",
+      "dateCreated": "2024-02-24T22:28:57.864Z"
+    }
+  ],
+  "linkHandles": [
+    {
+      "linkHandleName": "string",
+      "linkHandleTitle": "string",
+      "linkHandleUrl": "string",
+      "linkHandleType": "string",
+      "dateCreated": "2024-02-24T22:28:57.864Z"
+    }
+  ],
+  "imageFiles": [
+    {
+      "imageFileName": "string",
+      "imageFileExtension": "string",
+      "imageFileTitle": "string",
+      "imageFileUrl": "string",
+      "imageFileType": "string",
+      "dateCreated": "2024-02-24T22:28:57.864Z"
+    }
+  ]
+}

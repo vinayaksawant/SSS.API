@@ -10,15 +10,15 @@
 
         //public EmployeeAssociate Associates { get; set; }
 
-        public ICollection<Employer> PastEmployers { get; set; }
+        public ICollection<Employer>? PastEmployers { get; set; }
 
-        public ICollection<JobSkill> ExperienceJobSkills { get; set; }
+        public ICollection<JobSkill>? ExperienceJobSkills { get; set; }
 
-        public ICollection<Document> Documents { get; set; }
+        public ICollection<Document>? Documents { get; set; }
 
-        public ICollection<LinkHandle> LinkHandles { get; set; }
+        public ICollection<LinkHandle>? LinkHandles { get; set; }
 
-        public ICollection<ImageFile> ImageFiles { get; set; }
+        public ICollection<ImageFile>? ImageFiles { get; set; }
 
     }
 }

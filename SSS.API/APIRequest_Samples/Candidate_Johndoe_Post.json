@@ -1,0 +1,42 @@
+{
+  "memberCandidate": {
+    "orgName": null,
+    "description": "JohnDoe",
+    "individual": true,
+    "firstName": "john",
+    "lastName": "Doe",
+    "middleName": "string",
+    "title": "string",
+    "addresses": [
+      {
+        "addressLine1": "string",
+        "addressLine2": "string",
+        "city": "string",
+        "takula": "string",
+        "region": "string",
+        "county": "string",
+        "state": "string",
+        "postalCode": "string",
+        "country": "string",
+        "addressType": "string"
+      }
+    ],
+    "emails": [
+      {
+        "emailAddress": "string",
+        "emailType": "string"
+      }
+    ],
+    "phones": [
+      {
+        "phoneAreaCode": "string",
+        "phoneLocalStdIsd": "string",
+        "phoneNumber": "string",
+        "phoneType": "string"
+      }
+    ]
+  },
+  "yearsOfExperience": "1",
+  "isVisible": true
+
+}

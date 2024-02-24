@@ -1,0 +1,39 @@
+{
+  "memberOrganization": {
+    "orgName": "TCS1",
+    "description": "TCS1",
+    "individual": true,
+    "firstName": null,
+    "lastName": null,
+    "middleName": null,
+    "title": null,
+    "addresses": [
+      {
+        "addressLine1": "1 TCS way",
+        "addressLine2": "Address 2",
+        "city": "mumbai",
+        "takula": "string",
+        "region": "string",
+        "county": "string",
+        "state": "string",
+        "postalCode": "string",
+        "country": "string",
+        "addressType": "Office"
+      }
+    ],
+    "emails": [
+      {
+        "emailAddress": "string",
+        "emailType": "string"
+      }
+    ],
+    "phones": [
+      {
+        "phoneAreaCode": "string",
+        "phoneLocalStdIsd": "string",
+        "phoneNumber": "string",
+        "phoneType": "string"
+      }
+    ]
+  }
+}
