@@ -27,27 +27,27 @@ namespace SSS.API.Controllers
             this.httpContextAccessor = httpContextAccessor;
             this.dbContext = dbContext;
         }
-        /*
+
         // GET: api/Documents
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Document>>> GetDocuments()
         {
-          if (_context.Documents == null)
+          if (dbContext.Documents == null)
           {
               return NotFound();
           }
-            return await _context.Documents.ToListAsync();
+            return await dbContext.Documents.ToListAsync();
         }
 
         // GET: api/Documents/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Document>> GetDocument(Guid id)
         {
-          if (_context.Documents == null)
+          if (dbContext.Documents == null)
           {
               return NotFound();
           }
-            var document = await _context.Documents.FindAsync(id);
+            var document = await dbContext.Documents.FindAsync(id);
 
             if (document == null)
             {
@@ -56,7 +56,7 @@ namespace SSS.API.Controllers
 
             return document;
         }
-
+        /*
         // PUT: api/Documents/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -103,27 +103,34 @@ namespace SSS.API.Controllers
         //    return CreatedAtAction("GetDocument", new { id = document.Id }, document);
         //}
         */
+
         // POST: {apibaseurl}/api/Documents
         [HttpPost]
-        public async Task<IActionResult> UploadDocument([FromForm] IFormFile file,
-            [FromForm] string fileName, [FromForm] string title, [FromForm] string fileType)
+        public async Task<IActionResult> UploadDocument([FromForm] IFormFile document,
+            [FromForm] string documentName, [FromForm] string documentTitle, [FromForm] string documentType
+            , [FromForm] string dateCreated, [FromForm] string documentRelatedToEntity)
         {
-            ValidateFileUpload(file);
+            //,[DateCreated]      ,[CandidateId]     ,[EmployeeId]      ,[EmployerId]      ,[JobPostingId]    
+
+            ValidateFileUpload(document);
+
+            //GetdocumentRelatedToEntity
 
             if (ModelState.IsValid)
             {
                 // File upload
                 var documentFile = new Document
                 {
-                    DocumentExtension = Path.GetExtension(file.FileName).ToLower(),
-                    DocumentName = fileName,
-                    DocumentTitle = title,
+                    DocumentExtension = Path.GetExtension(document.FileName).ToLower(),
+                    DocumentName = documentName,
+                    DocumentTitle = documentTitle,
                     DocumentUrl = "",
-                    DocumentType = fileType,
-                    DateCreated = DateTime.Now
+                    DocumentType = documentType,
+                    DateCreated = DateTime.Now,
+                    //Candia
                 };
 
-                documentFile = await this.Upload(file, documentFile);
+                documentFile = await this.Upload(document, documentFile);
 
                 // Convert Domain Model to DTO
                 //var response = new BlogImageDto
@@ -164,7 +171,7 @@ namespace SSS.API.Controllers
 
         private void ValidateFileUpload(IFormFile file)
         {
-            var allowedExtensions = new string[] { ".jpg", ".jpeg", ".png", ".ico", ".txt" };
+            var allowedExtensions = new string[] { ".jpg", ".jpeg", ".png", ".ico", ".txt", ".doc" , ".pdf", ".docx" };
 
             if (!allowedExtensions.Contains(Path.GetExtension(file.FileName).ToLower()))
             {
